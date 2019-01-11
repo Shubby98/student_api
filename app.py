@@ -10,6 +10,8 @@ student_record = db.student_records
 
 app = Flask(__name__)
 
+
+#welcome page
 @app.route('/')
 def index():
 	return "Welcome to student Records API" 
@@ -34,6 +36,8 @@ def student_list():
 		except Exception as e:
 			return json.dumps({'error' : str(e)})
 			
+
+
 @app.route('/students/<int:roll_no>/' , methods= ['GET' , 'PATCH' , 'DELETE'])
 def student_details(roll_no):
 	if student_record.count_documents({'roll_no': roll_no}) is 0:
