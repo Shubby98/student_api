@@ -57,7 +57,9 @@ def student_details(roll_no):
 		student_record.delete_one({'roll_no' : roll_no})
 		return json.dumps({'result' : 'Successfully deleted the record'})
 
-
+@app.route('/codeforces')
+def codeforces():
+	return "Welcome to codeforces " 
 
 
 
